@@ -1,11 +1,11 @@
 """Auto-load activation classes for convenient imports.
 
 Any new module in this package that defines subclasses of
-`LossBase` will automatically be imported into the package
+`InitializerBase` will automatically be imported into the package
 namespace.
 """
 
-from .base import LossBase
+from .base import InitializerBase
 
 import importlib
 import inspect
@@ -20,8 +20,8 @@ for module_info in pkgutil.iter_modules(__path__):
     for attribute_name, attribute in vars(module).items():
         if (
             inspect.isclass(attribute)
-            and issubclass(attribute, LossBase)
-            and attribute is not LossBase
+            and issubclass(attribute, InitializerBase)
+            and attribute is not InitializerBase
         ):
             globals()[attribute_name] = attribute
             __all__.append(attribute_name)
