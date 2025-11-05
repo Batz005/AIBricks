@@ -10,5 +10,5 @@ class MeanSquaredError(LossBase):
 
     def gradient(self, predicted_y: np.ndarray, true_y: np.ndarray) -> np.ndarray:
         """Compute the gradient of MSE with respect to predictions."""
-        m = predicted_y.shape[1] if predicted_y.ndim > 1 else predicted_y.size
+        m = predicted_y.size if predicted_y.size else 1
         return 2 * (predicted_y - true_y) / m

@@ -1,6 +1,7 @@
 
-from .l1 import L1
-from .l2 import L2
-from .elasticnet import ElasticNet
+from .L1 import L1
+from .L2 import L2
+from .ElasticNet import ElasticNet
+from .base import RegularizerBase
 
-__all__ = ["L1", "L2", "ElasticNet"]
+__all__ = ["RegularizerBase","L1", "L2", "ElasticNet"]

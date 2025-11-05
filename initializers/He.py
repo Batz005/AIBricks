@@ -9,5 +9,5 @@ class He(InitializerBase):
     """
 
     def initialize(self, shape: tuple[int, int]) -> np.ndarray:
-        fan_in, _ = shape
-        return np.random.randn(*shape) * np.sqrt(2.0 / fan_in)
+        fan_out, fan_in = shape
+        return np.random.randn(fan_out, fan_in) * np.sqrt(2.0 / fan_in)
