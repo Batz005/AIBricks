@@ -19,7 +19,7 @@ class Auto(InitializerBase):
     def _choose_strategy(self):
         if self.activation_name == 'relu':
             return He()
-        elif self.activation_name in ('tanh', 'sigmoid'):
+        elif self.activation_name in ('tanh', 'sigmoid', 'linear'):
             return Xavier()
         else:
             raise ValueError(f"Unsupported activation for auto initializer: {self.activation_name}")
